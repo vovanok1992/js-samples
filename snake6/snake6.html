@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snake</title>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="snake.css"></link>
+
+<div class="mainContainer">
+	<div id="gameContaner" class="gameContaner">
+		<div id="gameFinishDialog" class="gameFinishDialog dialogHidden">
+			<div id="restartButton" class="restartGameButton">Restart the game</div>
+		</div>
+	</div>
+
+	<div class="stats">
+		<div class="scoreBoard">
+			<div class="lable-score">SCORE</div>
+			<div id="scoreContainer" class="scoreContainer">0</div>
+		</div>
+
+		<div class="scoreBoard">
+			<div class="lable-score">Level</div>
+			<div id="levelContainer" class="scoreContainer">1</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="snake.js"></script>
+<script type="text/javascript">
+	new GamePlayController().start();
+</script>
+
+</body>
+</html>
