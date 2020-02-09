@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>My maze</title>
+        <style>
+            body {
+                background-color: #454647;
+            }
+
+            .game {
+                border: 2px solid #959697;
+                height: calc(100% - 4px);
+                width: calc(100% - 4px);
+            }
+
+            .finish-dialog {
+                position: absolute;
+                background-color: rgba(0,0,0,0.3);
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: 1s;
+                backdrop-filter: blur(10px);
+            }
+
+            .continue-btn {
+                position: relative;
+                left: 50%;
+                top: 50%;
+                font-size: 50px;
+                color: white;
+                background-color: rgba(0,0,0,0.5);
+                border: none;
+                padding: 20px 30px;
+                transform: scale(1) translate(-50%, -50%);
+                transform-origin: 0 0;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .continue-btn:hover {
+                background-color: rgba(0,0,0,1);
+                transform: scale(1.3) translate(-50%, -50%);
+                transform-origin: 0 0;
+            }
+
+            .finish-dialog:hover {
+                backdrop-filter: blur(0px);
+            }
+
+            .hide {
+                opacity: 0;
+                pointer-events: none;
+                backdrop-filter: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="finish-dialog hide" id="restart-dialog">
+            <button id="restart-btn" class="continue-btn">Continue</button>
+        </div>
+        
+        <script src="dijkstra.js"></script>
+        <script src="maze.js"></script>
+        <script>
+            start(document.body, document.getElementById("restart-dialog"), document.getElementById("restart-btn"))
+        </script>
+    </body>
+</html>
